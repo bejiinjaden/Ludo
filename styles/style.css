@@ -1,0 +1,88 @@
+*{
+    box-sizing: border-box;
+}
+
+.ludo-container{
+    width: 450px;
+}
+
+.ludo{
+    height: 450px;
+    width: 100%;
+    background-image: url('../images/ludo_bg2.png');
+    background-size: contain;
+    position: relative;   
+}
+
+.player-pieces{
+    height: 100%;
+    width: 100%;
+}
+
+.player-pieces-active {
+    cursor: pointer;
+    border: 2px dashed;
+    animation: piece-activate 1s infinite linear ;
+    
+}
+
+@keyframes piece-activate {
+    0%{
+        transform: rotate(0deg);
+    }
+
+    50%{
+        transform: rotate(180deg) scale(1.4);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+    
+}
+
+.player-piece{
+    height: 3%;
+    width: 3%;
+    border: 2px solid;
+    border-radius: 50%;
+}
+
+[player-id = "P1"].player-piece {
+    background-color: rgb(111, 222, 241);
+}
+
+[player-id = "P2"].player-piece {
+    background-color: limegreen;
+}
+
+
+ [player-id="P1"].player-base{
+    height: 40%;
+    width: 40%;
+    bottom: 0;
+    left: -2px; 
+    position: absolute;
+    border:30px solid #1295e7;
+}
+
+ [player-id="P2"].player-base{
+    height: 40%;
+    width: 40%;
+    top: 0;
+    right: 1px;
+    position: absolute;
+    border:30px solid #049645;
+}
+
+.player-base-highlight{
+    animation: blink-base 1s infinite ease-in-out;
+}
+
+@keyframes blink-base {
+
+    50%{
+        border-color: rgba(226, 220, 220, 0.8);
+    }
+    
+}
